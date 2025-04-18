@@ -8,6 +8,7 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header>
@@ -50,23 +51,43 @@
     <section class="hero">
       <div class="container">
         <div class="hero-content">
-          <h1>T-LoG 4X4</h1>
+          <h1><span class="highlight">T-LoG 4X4</span></h1>
           <p class="subtitle">
-            מערכת ניטור טמפרטורה ולחות עם רשם טמפרטורה סלולרי דור 4 המתקדם
-            והחדשני ביותר בישראל
+            מערכת ניטור טמפרטורה ולחות מתקדמת דור 4 - הפתרון המקצועי לבקרת
+            טמפרטורה בזמן אמת
           </p>
           <div class="hero-buttons">
-            <a href="#contact" class="btn primary-btn">לקבלת הצעת מחיר</a>
-            <a href="#about" class="btn secondary-btn">למידע נוסף</a>
+            <button class="btn video-btn" onclick="openVideoPopup()">
+              <i class="fas fa-play"></i> צפו בסרטון הדגמה
+            </button>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Video Popup -->
+    <div id="videoPopup" class="video-popup">
+      <div class="popup-content">
+        <span class="close-popup" onclick="closeVideoPopup()">&times;</span>
+        <div class="video-container">
+          <video id="demoVideo" controls>
+            <source src="assets/showcase_video.mp4" type="video/mp4" />
+            הדפדפן שלך אינו תומך בנגן וידאו.
+          </video>
+        </div>
+      </div>
+    </div>
+
     <section class="product-intro" id="about">
       <div class="container">
         <h2 class="section-title">מערכת ניטור מתקדמת</h2>
         <div class="intro-content">
+          <div class="intro-image">
+            <img
+              src="assets/device.png"
+              alt="מכשיר T-LoG 4X4"
+              class="device-image" />
+          </div>
           <div class="intro-text">
             <p class="highlight-text">
               אטלס מערכות מציגה את סדרת T-Log 4X4 רשם טמפרטורה ולחות סלולרי
@@ -87,9 +108,6 @@
               תקנות משרד התקשורת.
             </p>
           </div>
-          <div class="intro-image">
-            <img src="assets/device.png" alt="מערכת T-LoG 4X4" />
-          </div>
         </div>
       </div>
     </section>
@@ -107,48 +125,24 @@
               src="assets/showcase1.jpeg"
               alt="מערכת T-LoG 4X4 בשימוש"
               class="gallery-img" />
-            <div class="gallery-overlay">
-              <div class="gallery-info">
-                <h3>ממשק משתמש נוח</h3>
-                <p>ניטור מהיר ונוח דרך האפליקציה שלנו</p>
-              </div>
-            </div>
           </div>
           <div class="gallery-item story-format">
             <img
               src="assets/showcase2.jpg"
               alt="יישום T-LoG 4X4"
               class="gallery-img" />
-            <div class="gallery-overlay">
-              <div class="gallery-info">
-                <h3>תצוגת נתונים</h3>
-                <p>ממשק המערכת על גבי כל מכשיר נייד ונייח</p>
-              </div>
-            </div>
           </div>
           <div class="gallery-item story-format">
             <img
-              src="assets/showcase3.jpg"
+              src="assets/showcase3.jpeg"
               alt="התקנת T-LoG 4X4"
               class="gallery-img" />
-            <div class="gallery-overlay">
-              <div class="gallery-info">
-                <h3>התקנה פשוטה</h3>
-                <p>אין צורך להסתבך, התקנה פשוטה ומהירה</p>
-              </div>
-            </div>
           </div>
           <div class="gallery-item story-format">
             <img
-              src="assets/showcase4.jpg"
+              src="assets/showcase4.jpeg"
               alt="יישום T-LoG 4X4 בשטח"
               class="gallery-img" />
-            <div class="gallery-overlay">
-              <div class="gallery-info">
-                <h3>תמיכה ושירות</h3>
-                <p>שירות אדיב ולא מאכזב</p>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -306,65 +300,29 @@
         <h2 class="section-title">תחומי יישום</h2>
         <div class="applications-grid">
           <div class="application-card">
-            <div class="application-icon">
-              <svg viewBox="0 0 36 36" width="70" height="70">
-                <text
-                  x="50%"
-                  y="50%"
-                  font-size="24"
-                  text-anchor="middle"
-                  dominant-baseline="middle">
-                  🚚
-                </text>
-              </svg>
+            <div class="application-image">
+              <img src="assets/logistics.png" alt="יישום במשאיות ורכבי קירור" />
             </div>
             <h3>משאיות ורכבי קירור</h3>
             <p>ניטור טמפרטורה בעת הובלה בתנאי קירור מבוקרים</p>
           </div>
           <div class="application-card">
-            <div class="application-icon">
-              <svg viewBox="0 0 36 36" width="70" height="70">
-                <text
-                  x="50%"
-                  y="50%"
-                  font-size="24"
-                  text-anchor="middle"
-                  dominant-baseline="middle">
-                  💊
-                </text>
-              </svg>
+            <div class="application-image">
+              <img src="assets/pharmacy.jpg" alt="יישום במקררי תרופות" />
             </div>
             <h3>מקררי תרופות</h3>
             <p>שמירה על תנאי אחסון אופטימליים של תכשירים רפואיים</p>
           </div>
           <div class="application-card">
-            <div class="application-icon">
-              <svg viewBox="0 0 36 36" width="70" height="70">
-                <text
-                  x="50%"
-                  y="50%"
-                  font-size="24"
-                  text-anchor="middle"
-                  dominant-baseline="middle">
-                  🍎
-                </text>
-              </svg>
+            <div class="application-image">
+              <img src="assets/farm.webp" alt="יישום בתוצרת חקלאית" />
             </div>
             <h3>תוצרת חקלאית</h3>
             <p>שמירה על טריות התוצרת החקלאית בשרשרת האספקה</p>
           </div>
           <div class="application-card">
-            <div class="application-icon">
-              <svg viewBox="0 0 36 36" width="70" height="70">
-                <text
-                  x="50%"
-                  y="50%"
-                  font-size="24"
-                  text-anchor="middle"
-                  dominant-baseline="middle">
-                  🍽️
-                </text>
-              </svg>
+            <div class="application-image">
+              <img src="assets/fridge.avif" alt="יישום במזון מקורר" />
             </div>
             <h3>מזון מקורר</h3>
             <p>עמידה בדרישות תקן 1291 להובלת מזון בקירור</p>
@@ -524,14 +482,5 @@
       aria-label="צור קשר בוואטסאפ">
       <i class="fab fa-whatsapp"></i>
     </a>
-
-    <script>
-      // Mobile menu toggle
-      document
-        .getElementById("mobile-menu")
-        .addEventListener("click", function () {
-          document.querySelector(".nav-menu").classList.toggle("active");
-        });
-    </script>
   </body>
 </html>
