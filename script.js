@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function openVideoPopup() {
   const popup = document.getElementById("videoPopup");
   const videoFrame = document.getElementById("demoVideo");
-  videoFrame.src = "assets/showcase_video.mp4"; // שימוש בסרטון מהתיקייה assets
+  videoFrame.src = "assets/videos/showcase_video.mp4"; // שימוש בסרטון מהתיקייה assets/videos
   popup.style.display = "block";
   document.body.style.overflow = "hidden";
 }

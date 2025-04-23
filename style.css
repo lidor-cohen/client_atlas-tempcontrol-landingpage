@@ -163,7 +163,7 @@ nav {
 /* Hero Section Styles */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("assets/hero.png") center/cover no-repeat;
+    url("assets/images/hero.png") center/cover no-repeat;
   color: white;
   padding: 4rem 0;
   text-align: center;
