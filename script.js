@@ -3,10 +3,62 @@ document.getElementById("mobile-menu").addEventListener("click", function () {
   document.querySelector(".nav-menu").classList.toggle("active");
 });
 
-// Close video popup on page load
+// Close video popup on page load and setup contact form
 document.addEventListener("DOMContentLoaded", function () {
   closeVideoPopup();
+  setupContactForm();
 });
+
+// Contact form submission handler
+function setupContactForm() {
+  const contactForm = document.getElementById("contactForm");
+  const formStatus = document.getElementById("formStatus");
+  
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = {
+        fullName: contactForm.fullName.value,
+        email: contactForm.email.value,
+        phone: contactForm.phone.value,
+        interest: contactForm.interest.value,
+        message: contactForm.message.value,
+        timestamp: new Date().toISOString(),
+        source: "T-LoG 4X4 Landing Page"
+      };
+      
+      // Show loading state
+      formStatus.innerHTML = '<p class="loading">שולח את הפנייה...</p>';
+      formStatus.style.display = "block";
+      
+      // Send data to webhook
+      fetch("https://hook.eu1.make.com/7uhjs1m29khl21mkgg7fbp54nye5d6hm", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+      .then(response => {
+        if (response.ok) {
+          // Success
+          formStatus.innerHTML = '<p class="success">תודה על פנייתך! נחזור אליך בהקדם.</p>';
+          contactForm.reset();
+        } else {
+          // Server error
+          throw new Error('Server error');
+        }
+      })
+      .catch(error => {
+        // Network or other error
+        console.error("Error submitting form:", error);
+        formStatus.innerHTML = '<p class="error">אירעה שגיאה בשליחת הטופס. אנא נסה שוב מאוחר יותר.</p>';
+      });
+    });
+  }
+}
 
 // Video Popup Functions
 function openVideoPopup() {

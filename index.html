@@ -49,6 +49,11 @@
     </header>
 
     <section class="hero">
+      <div class="hero-video-container">
+        <video autoplay muted loop playsinline id="hero-background-video">
+          <source src="assets/videos/hero_video.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="container">
         <div class="hero-content">
           <h1><span class="highlight">T-LoG 4X4</span></h1>
@@ -82,12 +87,6 @@
       <div class="container">
         <h2 class="section-title">בקרת טמפטורה מתקדמת</h2>
         <div class="intro-content">
-          <div class="intro-image">
-            <img
-              src="assets/images/device.png"
-              alt="מכשיר T-LoG 4X4"
-              class="device-image" />
-          </div>
           <div class="intro-text">
             <p class="highlight-text">
               אטלס מערכות מציגה את סדרת T-Log 4X4 רשם טמפרטורה ולחות סלולרי
@@ -109,19 +108,7 @@
             </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="gallery-showcase" id="gallery">
-      <div class="container">
-        <h2 class="section-title">המערכת בפעולה</h2>
-        <div class="gallery-description">
-          <p>
-            צפו בתמונות של מערכת T-LoG 4X4 מותקנת ופועלת אצל לקוחותינו במגוון
-            יישומים
-          </p>
-        </div>
-
+        
         <div class="gallery-container">
           <div class="gallery-item story-format">
             <img
@@ -148,7 +135,7 @@
               class="gallery-img" />
           </div>
         </div>
-
+        
         <div class="gallery-actions">
           <a href="#contact" class="btn primary-btn">לקבלת מידע נוסף</a>
         </div>
@@ -388,6 +375,11 @@
     </section>
 
     <section class="cta-section">
+      <div class="cta-video-container">
+        <video autoplay muted loop playsinline id="cta-background-video">
+          <source src="assets/videos/shaking_hands_video.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="container">
         <div class="cta-content">
           <h2>צרו איתנו קשר בכל שאלה</h2>
@@ -415,18 +407,18 @@
               <p>email@atlas.co.il</p>
             </div>
           </div>
-          <form class="contact-form">
+          <form id="contactForm" class="contact-form">
             <div class="form-group">
-              <input type="text" placeholder="שם מלא" required />
+              <input type="text" name="fullName" placeholder="שם מלא" required />
             </div>
             <div class="form-group">
-              <input type="email" placeholder="אימייל" required />
+              <input type="email" name="email" placeholder="אימייל" required />
             </div>
             <div class="form-group">
-              <input type="tel" placeholder="טלפון" required />
+              <input type="tel" name="phone" placeholder="טלפון" required />
             </div>
             <div class="form-group">
-              <select>
+              <select name="interest">
                 <option value="" disabled selected>תחום התעניינות</option>
                 <option value="food">הובלת מזון</option>
                 <option value="pharma">תרופות</option>
@@ -436,9 +428,10 @@
               </select>
             </div>
             <div class="form-group">
-              <textarea placeholder="הודעה" rows="4"></textarea>
+              <textarea name="message" placeholder="הודעה" rows="4"></textarea>
             </div>
             <button type="submit" class="btn primary-btn">שלח פנייה</button>
+            <div id="formStatus" class="form-status"></div>
           </form>
         </div>
       </div>
