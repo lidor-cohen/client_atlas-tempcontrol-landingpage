@@ -1,6 +1,17 @@
 // Mobile menu toggle
 document.getElementById("mobile-menu").addEventListener("click", function () {
   document.querySelector(".nav-menu").classList.toggle("active");
+  this.innerHTML = document.querySelector(".nav-menu").classList.contains("active") 
+    ? '<i class="fas fa-times"></i>' 
+    : '<i class="fas fa-bars"></i>';
+});
+
+// Close mobile menu when clicking on a nav link
+document.querySelectorAll(".nav-menu a").forEach(function(link) {
+  link.addEventListener("click", function() {
+    document.querySelector(".nav-menu").classList.remove("active");
+    document.getElementById("mobile-menu").innerHTML = '<i class="fas fa-bars"></i>';
+  });
 });
 
 // Close video popup on page load and setup contact form
