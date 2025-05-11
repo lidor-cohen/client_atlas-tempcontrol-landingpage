@@ -488,6 +488,19 @@ nav {
     height: 80px;
     padding: 10px;
   }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero .subtitle {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+  
+  .section-title {
+    font-size: 1.7rem;
+  }
 }
 
 /* Applications Section Styles */
@@ -627,12 +640,12 @@ nav {
     height: 100vh;
     background-color: var(--primary-color);
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     padding: 80px 30px 30px;
-    transition: 0.3s ease-in-out;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    transition: 0.4s;
+    overflow-y: auto;
     z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
   }
 
   .nav-menu.active {
@@ -640,43 +653,28 @@ nav {
   }
 
   .nav-menu li {
+    margin: 1.2rem 0;
     width: 100%;
-    margin-bottom: 20px;
+    text-align: center;
   }
-
+  
   .nav-menu li a {
-    display: block;
+    display: inline-block;
     width: 100%;
-    padding: 10px 0;
+    padding: 0.7em;
     font-size: 1.1rem;
   }
-}
-
-/* Responsive for Gallery */
-@media (max-width: 1400px) {
-  .gallery-container {
-    grid-template-columns: repeat(4, 1fr);
+  
+  .product-intro__content {
+    padding: 0 10px;
   }
-}
-
-@media (max-width: 992px) {
-  .gallery-container {
-    grid-template-columns: repeat(3, 1fr);
+  
+  .benefits-container {
+    padding: 0 10px;
   }
 }
 
 @media (max-width: 768px) {
-  .gallery-container {
-    grid-template-columns: repeat(2, 1fr);
-    padding-bottom: 15px;
-  }
-
-  .gallery-item.story-format {
-    height: 400px;
-    width: 220px;
-    min-width: 220px;
-  }
-
   .hero-buttons {
     flex-direction: column;
     align-items: center;
@@ -684,30 +682,46 @@ nav {
 
   .hero-buttons .btn {
     width: 100%;
-    max-width: 300px;
+    margin-bottom: 1rem;
   }
 
-  .hero-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
+  .benefits-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .hero .subtitle {
-    font-size: 1.2rem;
-    max-width: 100%;
+  .product-intro__content {
+    flex-direction: column;
+  }
+
+  .intro-text {
+    order: 0;
+    margin-bottom: 30px;
+  }
+
+  .gallery-container {
+    order: 1;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-info {
+    order: 1;
   }
   
-  .section-title {
-    font-size: 1.8rem;
+  .logo {
+    height: 40px;
   }
   
   .btn {
     padding: 0.6em 1.2em;
-    font-size: 0.9rem;
+  }
+  
+  .hero {
+    padding: 2rem 0;
   }
   
   section {
@@ -764,17 +778,74 @@ nav {
 }
 
 @media (max-width: 576px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  body {
+    position: relative;
+    width: 100%;
+  }
+  
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+  
   .gallery-container {
     display: flex;
     overflow-x: auto;
     gap: 15px;
     padding: 10px 5px 20px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .gallery-item.story-format {
     height: 380px;
     width: 200px;
     min-width: 200px;
+  }
+  
+  .benefit {
+    padding: 15px;
+  }
+  
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .popup-content {
+    width: 95%;
+    height: 80vh;
+    margin: 10vh auto;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .highlight-text {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    margin-bottom: 25px;
+  }
+  
+  .whatsapp-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    bottom: 15px;
+    right: 15px;
   }
 }
 /* Benefits Section */
@@ -850,6 +921,53 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
   gap: 25px;
+}
+
+@media (max-width: 992px) {
+  .specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .features-specs {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 576px) {
+  .specs-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 0 5px;
+  }
+  
+  .spec-item {
+    padding: 15px;
+    margin-bottom: 5px;
+    max-width: 100%;
+  }
+  
+  .spec-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .spec-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .spec-item p {
+    font-size: 0.9rem;
+  }
+  
+  .features {
+    padding: 30px 0;
+  }
 }
 
 /* Continue Features/Specs Section */
