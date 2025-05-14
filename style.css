@@ -44,14 +44,22 @@ section {
 
 .section-title {
   text-align: center;
-  margin-bottom: 40px;
   color: var(--primary-color);
   font-size: 2rem;
   position: relative;
   padding-bottom: 15px;
 }
 
-.section-title::after {
+.section-subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  color: black;
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-subtitle::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -460,7 +468,7 @@ nav {
     grid-template-rows: repeat(4, 1fr);
     gap: 25px;
   }
-  
+
   .partner-logo {
     height: 110px;
   }
@@ -472,7 +480,7 @@ nav {
     grid-template-rows: repeat(6, 1fr);
     gap: 20px;
   }
-  
+
   .partner-logo {
     height: 100px;
   }
@@ -483,21 +491,21 @@ nav {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
-  
+
   .partner-logo {
     height: 80px;
     padding: 10px;
   }
-  
+
   .hero h1 {
     font-size: 2.5rem;
   }
-  
+
   .hero .subtitle {
     font-size: 1.1rem;
     padding: 0 10px;
   }
-  
+
   .section-title {
     font-size: 1.7rem;
   }
@@ -657,18 +665,18 @@ nav {
     width: 100%;
     text-align: center;
   }
-  
+
   .nav-menu li a {
     display: inline-block;
     width: 100%;
     padding: 0.7em;
     font-size: 1.1rem;
   }
-  
+
   .product-intro__content {
     padding: 0 10px;
   }
-  
+
   .benefits-container {
     padding: 0 10px;
   }
@@ -711,19 +719,19 @@ nav {
   .contact-info {
     order: 1;
   }
-  
+
   .logo {
     height: 40px;
   }
-  
+
   .btn {
     padding: 0.6em 1.2em;
   }
-  
+
   .hero {
     padding: 2rem 0;
   }
-  
+
   section {
     padding: 40px 0;
   }
@@ -746,28 +754,28 @@ nav {
   .hero-gallery {
     grid-template-columns: 1fr;
   }
-  
+
   .hero h1 {
     font-size: 2rem;
   }
-  
+
   .hero .subtitle {
     font-size: 1rem;
   }
-  
+
   .section-title {
     font-size: 1.5rem;
   }
-  
+
   .container {
     width: 95%;
     padding: 0 10px;
   }
-  
+
   section {
     padding: 30px 0;
   }
-  
+
   .whatsapp-btn {
     width: 50px;
     height: 50px;
@@ -778,20 +786,21 @@ nav {
 }
 
 @media (max-width: 576px) {
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
   }
-  
+
   body {
     position: relative;
     width: 100%;
   }
-  
+
   .container {
     width: 95%;
     padding: 0 10px;
   }
-  
+
   .gallery-container {
     display: flex;
     overflow-x: auto;
@@ -805,41 +814,41 @@ nav {
     width: 200px;
     min-width: 200px;
   }
-  
+
   .benefit {
     padding: 15px;
   }
-  
+
   .benefit-icon {
     width: 60px;
     height: 60px;
     font-size: 1.5rem;
   }
-  
+
   .popup-content {
     width: 95%;
     height: 80vh;
     margin: 10vh auto;
   }
-  
+
   .hero h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
-  
+
   .hero .subtitle {
     font-size: 1rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .highlight-text {
     font-size: 1.1rem;
   }
-  
+
   .section-title {
     margin-bottom: 25px;
   }
-  
+
   .whatsapp-btn {
     width: 50px;
     height: 50px;
@@ -929,7 +938,7 @@ nav {
     gap: 20px;
     padding: 0 10px;
   }
-  
+
   .features-specs {
     max-width: 100%;
     overflow-x: hidden;
@@ -942,29 +951,29 @@ nav {
     gap: 15px;
     margin: 0 5px;
   }
-  
+
   .spec-item {
     padding: 15px;
     margin-bottom: 5px;
     max-width: 100%;
   }
-  
+
   .spec-icon {
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
     font-size: 1.3rem;
   }
-  
+
   .spec-item h4 {
     font-size: 1.1rem;
     margin-bottom: 8px;
   }
-  
+
   .spec-item p {
     font-size: 0.9rem;
   }
-  
+
   .features {
     padding: 30px 0;
   }
@@ -1179,14 +1188,14 @@ nav {
   .contact-container {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 30px;
   }
-  
+
   .info-item {
     margin-bottom: 20px;
     width: 45%;
@@ -1306,7 +1315,7 @@ footer {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .footer-logo {
     align-items: center;
   }
